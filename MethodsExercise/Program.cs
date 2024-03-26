@@ -4,64 +4,83 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("What is your name?");
+            MadLib();
+            Add(24, 36, 52, 4, 19);
+            Subtract(95, 77);
+            Multiply(34, 7);
+            Divide(99, 11);
+            Modulus(49, 5);
+        }
+
+        public static void MadLib()
+        {
+            Console.WriteLine("What is your last name?");
             string name = Console.ReadLine();
-            Console.WriteLine("What is your favorite color?");
-            string color = Console.ReadLine();
+            Console.WriteLine();
             Console.WriteLine("What is your favorite animal?");
             string animal = Console.ReadLine();
-            Console.WriteLine("Who is your favorite band?");
-            string band = Console.ReadLine();
-            Console.WriteLine($"Hello, {name}. My name is Stephen. What is your favorite color? {color}. I love the color Blue. My favorite animal is a dog. Whats Your favorite animal? {animal}. I like the Rolling Stones. Who is your favorite band? {band}.");
-            int y = Add(10, 5, 12, 14, 34);
-            Console.WriteLine(y);
-            Subtract(10, 5);
-            Multiply(10, 5);
-            Divide(10, 5);
-            Modulus(34, 5); 
-            
-        }
-
-        public static int Add(params int[] ListNumbers)
+            Console.WriteLine();
+            Console.WriteLine("How was your day?");
+            string how = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine("Do you jog,walk, or run a mile?");
+            string exercise = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine($"One {how} day with a woof and a purr.\n" +
+                $"A {name} was born and it caused a little stir.\n" +
+                $"No blue buzzard, no three -eyed frog.\n" +
+                $" Just a feline canine little {animal}dog.\n " +
+                $"{animal}dog, {animal}dog, alone in the world is a little {animal}dog!\n" +
+                $" Out on the road or back in town.\n " +
+                $"All kinda critter putting {animal}dog down.\n" +
+                $" Gotta rise above it gotta try to get along.\n " +
+                $"Gotta {exercise} together gotta sing this song.\n" +
+                $" {animal}dog, {animal}dog, alone in the world is a little {animal}dog!");
+         }
+        public static int Add(params int[] list)
         {
-            int total = 0;
-            foreach (int i in ListNumbers)
+            int sum = 0;
+            foreach(int i in list)
             {
-                total += i;
+                sum = sum + i;
             }
-            return total;
+            Console.WriteLine(sum);
+            return sum;
         }
 
-        public static int Subtract(int numb1, int numb2)
+        public static int Subtract(int n1, int n2)
         {
-            int difference = numb1 - numb2;
+            int difference = n1 - n2;
             Console.WriteLine(difference);
             return difference;
+
         }
 
-        public static int Multiply(int numb1, int numb2)
+        public static int Multiply(int n1, int n2)
         {
-            int product = numb1 * numb2;
+            int product = n1 * n2;
             Console.WriteLine(product);
             return product;
         }
 
-        public static int Divide(int numb1, int numb2)
+        public static int Divide(int n1, int n2)
         {
-            int quotient = numb1 / numb2;
+            int quotient = n1 / n2;
             Console.WriteLine(quotient);
             return quotient;
         }
 
-        public static int Modulus(int numb1, int numb2)
+        public static int Modulus(int n1, int n2)
         {
-            int modulus = numb1 % numb2;
+            int modulus = n1 % n2;
             Console.WriteLine(modulus);
             return modulus;
-
         }
+
+
+    }
 }
-}
+
     
 
 
